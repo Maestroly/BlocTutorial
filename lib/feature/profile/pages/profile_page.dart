@@ -19,7 +19,7 @@ class ProfilePage extends StatelessWidget {
               actions: [
                 BlocBuilder<ProfileCubit, ProfileState>(
                   builder: (context, state) {
-                    int counter = 0;
+                    int counter = 5;
                     if (state is ProfileLoaded) {
                       counter = state.counter;
                     }

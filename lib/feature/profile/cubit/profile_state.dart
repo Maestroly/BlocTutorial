@@ -12,5 +12,3 @@ class ProfileLoaded extends ProfileState {
 
   ProfileLoaded(this.users, {this.counter = 0});
 }
-
-class ProfileError extends ProfileState {}

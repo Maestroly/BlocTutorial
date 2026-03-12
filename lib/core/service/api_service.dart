@@ -8,7 +8,7 @@ class ApiService {
   final Dio dio = Dio();
   final String baseUrl = "https://dummyjson.com";
 
-  Future<List<Comments>> getPosts() async {
+  Future<List<Comments>> getComments() async {
     try {
       final response = await dio.get("$baseUrl/comments");
       if (response.statusCode == HttpStatus.ok) {
@@ -25,17 +25,13 @@ class ApiService {
 
   Future<UserModel> getUsers() async {
     try {
-      print("API request gönderildi");
       final response = await dio.get("$baseUrl/users");
-      print("Status code: ${response.statusCode}");
-      print("Response data: ${response.data}");
       if (response.statusCode == HttpStatus.ok) {
         return UserModel.fromJson(response.data);
       } else {
         throw Exception("API error");
       }
     } catch (e) {
-      print("API error: $e");
       rethrow;
     }
   }

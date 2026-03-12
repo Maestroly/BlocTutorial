@@ -15,13 +15,8 @@ class ProfileCubit extends Cubit<ProfileState> {
 
   Future<void> getUsers() async {
     emit(ProfileLoading());
-
-    try {
-      final result = await apiService.getUsers();
-      emit(ProfileLoaded(result.users ?? []));
-    } catch (e) {
-      emit(ProfileError());
-    }
+    final result = await apiService.getUsers();
+    emit(ProfileLoaded(result.users ?? []));
   }
 
   void increaseCounter() {

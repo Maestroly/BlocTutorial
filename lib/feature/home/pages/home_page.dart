@@ -51,17 +51,21 @@ class HomePage extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                                decoration: BoxDecoration(color: Colors.blue.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(20)),
-                                child: Text("Post ${comment.postId}", style: const TextStyle(fontSize: 12, color: Colors.blue)),
-                              ),
                             ],
                           ),
                           const SizedBox(height: 12),
-                          Text(comment.body ?? '', style: const TextStyle(fontSize: 15)),
+                          Text(comment.body ?? '', style: const TextStyle(fontSize: 32)),
                           const SizedBox(height: 12),
-                          Row(children: [const Icon(Icons.favorite_border, size: 18), const SizedBox(width: 4), Text("${comment.likes} likes")]),
+                          Row(
+                            children: [
+                              const Icon(Icons.favorite_border, size: 18),
+                              const SizedBox(width: 4),
+                              Text(
+                                "${comment.likes}"
+                                "likes",
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),

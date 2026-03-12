@@ -16,7 +16,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   Future<void> _onGetPostsEvent(GetPostsEvent event, Emitter<HomeState> emit) async {
     emit(HomeLoadingState());
-    final posts = await apiService.getPosts();
+    final posts = await apiService.getComments();
     emit(HomeLoadedState(posts));
   }
 }
